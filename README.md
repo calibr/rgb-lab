@@ -4,6 +4,18 @@ So it turns out that comparing the difference between RGB colors is actually a r
 
 So I decided to run a series of large scale double-blind (heh) experiments on human perception, analyzing the output with a dizzying array of statistical techniques and-- oh wait, no I didn't, because scientists have gotten that all figured out since the late '70s.
 
+# Installation
+
+`npm i rgb-lab`
+
+# Usage
+
+```
+const { rgb2lab, lab2rgb, deltaE } = require('rgb-lab')
+```
+
+# Exported functions
+
 ## rgb2lab([r, g, b])
 
 The first function is rgb2lab, it does kind of exactly what you'd expect, making the usual sRGB assumptions.
@@ -17,3 +29,5 @@ But if you feed functions values which lie squarely within the acceptable range 
 ## deltaE([labA], [labB])
 
 This function calculates DeltaE, the perceptual color distance between any two random colors in the L*a*b* space.
+
+Return value is float.

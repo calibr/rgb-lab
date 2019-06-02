@@ -1,7 +1,7 @@
 // the following functions are based off of the pseudocode
 // found on www.easyrgb.com
 
-function lab2rgb(lab){
+exports.lab2rgb = function lab2rgb(lab){
   var y = (lab[0] + 16) / 116,
       x = lab[1] / 500 + y,
       z = y - lab[2] / 200,
@@ -25,7 +25,7 @@ function lab2rgb(lab){
 }
 
 
-function rgb2lab(rgb){
+exports.rgb2lab = function rgb2lab(rgb){
   var r = rgb[0] / 255,
       g = rgb[1] / 255,
       b = rgb[2] / 255,
@@ -49,7 +49,7 @@ function rgb2lab(rgb){
 // calculate the perceptual distance between colors in CIELAB
 // https://github.com/THEjoezack/ColorMine/blob/master/ColorMine/ColorSpaces/Comparisons/Cie94Comparison.cs
 
-function deltaE(labA, labB){
+exports.deltaE = function deltaE(labA, labB){
   var deltaL = labA[0] - labB[0];
   var deltaA = labA[1] - labB[1];
   var deltaB = labA[2] - labB[2];
